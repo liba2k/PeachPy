@@ -1,10 +1,6 @@
 # This file is part of PeachPy package and is licensed under the Simplified BSD license.
 #    See license.rst for the full text of the license.
 
-
-import six
-
-
 class Register(object):
     """A base class for all encodable registers (rip is not encodable)"""
     _mask_size_map = {
@@ -133,7 +129,7 @@ class Register(object):
     @staticmethod
     def _reconstruct_multiple(reg_dict):
         reg_set = set()
-        for (reg_id, reg_mask) in six.iteritems(reg_dict):
+        for (reg_id, reg_mask) in reg_dict.items():
             reg_set.update(Register._reconstruct(reg_id, reg_mask))
         return reg_set
 

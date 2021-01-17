@@ -11,7 +11,11 @@ def check_operand(operand):
     from peachpy.literal import Constant
     from peachpy import Argument
     from peachpy.util import is_int, is_int64
-    from copy import copy, deepcopy
+    #from copy import copy, deepcopy
+    def copy(a):
+        return a
+    def deepcopy(a):
+        return a
     if isinstance(operand, Register):
         return copy(operand)
     elif isinstance(operand, (MaskedRegister, MemoryOperand)):
@@ -27,7 +31,7 @@ def check_operand(operand):
             raise ValueError("Memory operands must be represented by a list with only one element")
         return MemoryOperand(operand[0])
     elif isinstance(operand, Constant):
-        from copy import copy, deepcopy
+        #from copy import copy, deepcopy
         operand = copy(operand)
         import peachpy.common.function
         if peachpy.common.function.active_function:

@@ -1,10 +1,7 @@
 # This file is part of PeachPy package and is licensed under the Simplified BSD license.
 #    See license.rst for the full text of the license.
 
-from enum import Enum
-
-
-class SectionType(Enum):
+class SectionType():
     code = 0
     const_data = 1
 
@@ -61,7 +58,7 @@ class Section(object):
         self.relocations.append(relocation)
 
 
-class RelocationType(Enum):
+class RelocationType():
     """Relocation for RIP-relative disp32 offset"""
     rip_disp32 = 0
 
@@ -89,7 +86,7 @@ class Relocation:
         self.program_counter = program_counter
 
 
-class SymbolType(Enum):
+class SymbolType():
     """Literal constant"""
     literal_constant = 0
     """Label"""

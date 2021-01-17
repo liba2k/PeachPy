@@ -1,11 +1,7 @@
 # This file is part of PeachPy package and is licensed under the Simplified BSD license.
 #    See license.rst for the full text of the license.
 
-
-from enum import IntEnum
-
-
-class StorageClass(IntEnum):
+class StorageClass():
     """
     External symbol. If section number is undefined (0), value specifies symbol size. Otherwise value specifies offset
     within section.
@@ -21,7 +17,7 @@ class StorageClass(IntEnum):
     file = 103
 
 
-class SymbolType(IntEnum):
+class SymbolType():
     non_function = 0
     function = 0x20
 
@@ -60,7 +56,7 @@ class Symbol:
             encoder.uint8(auxiliary_entries)
 
 
-class RelocationType(IntEnum):
+class RelocationType():
     # Relocation is ignored
     absolute = 0
 

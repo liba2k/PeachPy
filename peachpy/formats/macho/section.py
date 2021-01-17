@@ -1,10 +1,8 @@
 # This file is part of PeachPy package and is licensed under the Simplified BSD license.
 #    See license.rst for the full text of the license.
 
-from enum import IntEnum
 
-
-class MemoryProtection(IntEnum):
+class MemoryProtection():
     read = 0x01
     write = 0x02
     execute = 0x04
@@ -80,11 +78,11 @@ class Segment:
         return command
 
 
-class SectionIndex(IntEnum):
+class SectionIndex():
     no_section = 0
 
 
-class SectionType(IntEnum):
+class SectionType():
     regular = 0x00
     zero_fill = 0x01
     gb_zero_fill = 0x0C
@@ -109,7 +107,7 @@ class SectionType(IntEnum):
     thread_local_function_pointers = 0x15
 
 
-class SectionAttributes(IntEnum):
+class SectionAttributes():
     only_instructions = 0x80000000
     coalesced_symbols = 0x40000000
     strip_static_symbols = 0x20000000

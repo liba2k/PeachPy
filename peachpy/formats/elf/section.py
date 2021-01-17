@@ -1,10 +1,7 @@
 # This file is part of PeachPy package and is licensed under the Simplified BSD license.
 #    See license.rst for the full text of the license.
 
-from enum import IntEnum
-
-
-class SectionFlags(IntEnum):
+class SectionFlags():
     # Section contains writable data during process execution
     writable = 0x1
     # Section occupies memory during process execution
@@ -13,7 +10,7 @@ class SectionFlags(IntEnum):
     executable = 0x4
 
 
-class SectionType(IntEnum):
+class SectionType():
     # Nil section
     null = 0
     # Program-specific content
@@ -38,7 +35,7 @@ class SectionType(IntEnum):
     dynamic_symbol_table = 11
 
 
-class SectionIndex(IntEnum):
+class SectionIndex():
     absolute = 0xFFF1
     common = 0xFFF2
     undefined = 0x0000
@@ -68,8 +65,6 @@ class Section(object):
 
     @type.setter
     def type(self, type):
-        if not isinstance(type, SectionType):
-            raise TypeError("Section type %s is not a SectionType enum" % str(type))
         self._type = type
 
     @property

@@ -1,15 +1,12 @@
 # This file is part of PeachPy package and is licensed under the Simplified BSD license.
 #    See license.rst for the full text of the license.
 
-from enum import IntEnum
-
-
-class SymbolVisibility(IntEnum):
+class SymbolVisibility():
     external = 0x01
     private_external = 0x10
 
 
-class SymbolType(IntEnum):
+class SymbolType():
     undefined = 0x00
     prebound_undefined = 0x0C
     absolute = 0x02
@@ -17,7 +14,7 @@ class SymbolType(IntEnum):
     indirect = 0x0A
 
 
-class SymbolDescription(IntEnum):
+class SymbolDescription():
     undefined_lazy = 0x00
     undefined_non_lazy = 0x01
     defined = 0x02
@@ -26,7 +23,7 @@ class SymbolDescription(IntEnum):
     private_undefined_non_lazy = 0x04
 
 
-class SymbolFlags(IntEnum):
+class SymbolFlags():
     referenced_dynamically = 0x10
     no_dead_strip = 0x20
     weak_reference = 0x40
@@ -75,7 +72,7 @@ class Symbol:
                 encoder.uint64(self.value + section_address_map[self.section])
 
 
-class RelocationType(IntEnum):
+class RelocationType():
     x86_64_unsigned = 0
     x86_64_signed = 1
     # CALL or JMP instruction with 32-bit displacement.

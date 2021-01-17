@@ -2,9 +2,6 @@
 # See license.rst for the full text of the license.
 
 
-import six
-
-
 class SectionFlags:
     # Section contains executable code
     code = 0x00000020
@@ -50,7 +47,7 @@ class Section(object):
         8192: 0x00E00000
     }
 
-    _flag_alignment_map = {flag: alignment for (alignment, flag) in six.iteritems(_alignment_flag_map)}
+    _flag_alignment_map = {flag: alignment for (alignment, flag) in _alignment_flag_map.items()}
 
     _alignment_mask = 0x00F00000
 

@@ -1,10 +1,7 @@
 # This file is part of PeachPy package and is licensed under the Simplified BSD license.
 #    See license.rst for the full text of the license.
 
-from enum import IntEnum
-
-
-class FileType(IntEnum):
+class FileType():
     # No file type
     null = 0
     # Relocatable file
@@ -31,7 +28,7 @@ class FileType(IntEnum):
     kext_bundle = 11
 
 
-class CpuType(IntEnum):
+class CpuType():
     x86 = 0x00000007
     x86_64 = 0x01000007
     arm = 0x0000000C
@@ -42,7 +39,7 @@ class CpuType(IntEnum):
     abi64 = 0x01000000
 
 
-class PPCCpuSubType(IntEnum):
+class PPCCpuSubType():
     all = 0
     # PowerPC G3
     powerpc750 = 9
@@ -54,11 +51,11 @@ class PPCCpuSubType(IntEnum):
     powerpc970 = 100
 
 
-class X86CpuSubType(IntEnum):
+class X86CpuSubType():
     all = 3
 
 
-class ARMCpuSubType(IntEnum):
+class ARMCpuSubType():
     all = 0
     # ARM 1176
     v6 = 6
@@ -74,7 +71,7 @@ class ARMCpuSubType(IntEnum):
     v8 = 13
 
 
-class ARM64CpuSubType(IntEnum):
+class ARM64CpuSubType():
     all = 0
     # Cyclone
     v8 = 1

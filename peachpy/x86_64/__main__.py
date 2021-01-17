@@ -8,7 +8,6 @@ from peachpy import *
 from peachpy.x86_64 import *
 import sys
 import argparse
-import six
 
 
 parser = argparse.ArgumentParser(
@@ -213,7 +212,7 @@ def main():
         if abi is None:
             raise ValueError("Could not auto-detect ABI: specify it with -mabi option")
         # Set options.abi to the corresponding string value because it is used later on
-        options.abi = {abi: name for name, (abi, _, _) in six.iteritems(abi_map)}[abi]
+        options.abi = {abi: name for name, (abi, _, _) in abi_map.items()}[abi]
     else:
         abi, _, _ = abi_map[options.abi]
     peachpy.x86_64.options.abi = abi

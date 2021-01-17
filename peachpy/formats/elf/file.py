@@ -1,10 +1,8 @@
 # This file is part of PeachPy package and is licensed under the Simplified BSD license.
 #    See license.rst for the full text of the license.
 
-from enum import IntEnum
 
-
-class FileType(IntEnum):
+class FileType():
     # No file type
     null = 0
     # Relocatable file
@@ -17,7 +15,7 @@ class FileType(IntEnum):
     core_dump = 4
 
 
-class MachineType(IntEnum):
+class MachineType():
     # Not specified
     unspecified = 0
     # SPARC
@@ -56,14 +54,14 @@ class MachineType(IntEnum):
     hsail64 = 0xAF5B
 
 
-class FormatVersion(IntEnum):
+class FormatVersion():
     # Invalid version
     invalid = 0
     # Current version
     current = 1
 
 
-class ElfClass(IntEnum):
+class ElfClass():
     # Invalid class
     invalid = 0
     # 32-bit ELF
@@ -72,7 +70,7 @@ class ElfClass(IntEnum):
     class64 = 2
 
 
-class DataEncoding(IntEnum):
+class DataEncoding():
     # Invalid data encoding
     invalid = 0
     # Least significant byte first (Little-Endian)
@@ -81,7 +79,7 @@ class DataEncoding(IntEnum):
     big_endian = 2
 
 
-class OSABI(IntEnum):
+class OSABI():
     # No extensions or unspecified
     none = 0
     # GNU Linux

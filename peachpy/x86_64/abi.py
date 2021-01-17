@@ -129,7 +129,7 @@ def detect(system_abi=False):
     :rtype: ABI or None
     """
     import platform
-    import os
+    import uos as os
     import struct
     (osname, node, release, version, machine, processor) = platform.uname()  # pylint:disable=unpacking-non-sequence
     pointer_size = struct.calcsize("P")

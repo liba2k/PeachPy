@@ -1,10 +1,7 @@
 # This file is part of PeachPy package and is licensed under the Simplified BSD license.
 #    See license.rst for the full text of the license.
 
-from enum import IntEnum
-
-
-class SymbolBinding(IntEnum):
+class SymbolBinding():
     local = 0
     global_ = 1
     weak = 2
@@ -77,7 +74,7 @@ class Symbol:
                 encoder.uint64(self.size)
 
 
-class RelocationType(IntEnum):
+class RelocationType():
     x86_32 = 1
     x86_pc32 = 2
     x86_got32 = 3
